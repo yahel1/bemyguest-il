@@ -7,9 +7,10 @@ class Participant:
     name: str
     is_grader: bool  # not used atm, for clarity in objects
     is_gradee: bool  # not used atm, for clarity in objects
-    food_grades: Dict["Participant", int] = field(default_factory=lambda: dict())  # pylint
-    hagasha_grades: Dict["Participant", int] = field(default_factory=lambda: dict())  # noqa
-    hospitality_grades: Dict["Participant", int] = field(default_factory=lambda: dict())  # noqa
+    food_grades: Dict["Participant", int] = field(default_factory=lambda: dict())
+    hagasha_grades: Dict["Participant", int] = field(default_factory=lambda: dict())
+    hospitality_grades: Dict["Participant", int] = field(default_factory=lambda: dict())
+    general_grades: Dict["Participant", int] = field(default_factory=lambda: dict())
 
     def __hash__(self) -> int:
         return hash(self.name)
@@ -32,3 +33,6 @@ class Participant:
 
     def norm_hospitality_grades(self) -> Dict["Participant", float]:
         return self._get_norm_grades(self.hospitality_grades)
+
+    def norm_general_grades(self) -> Dict["Participant", float]:
+        return self._get_norm_grades(self.general_grades)
