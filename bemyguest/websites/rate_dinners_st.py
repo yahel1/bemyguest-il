@@ -3,11 +3,12 @@ import sys
 
 import streamlit as st
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
+sys.path.append(os.path.dirname(os.path.dirname(__file__)))
+
 from bemyguest.websites.st_utils import convert_to_rtl, enter, get_grade, write_grades
 from bemyguest.websites.utils import flatten, ParticipantDF
 
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 st.markdown(
     """<style>

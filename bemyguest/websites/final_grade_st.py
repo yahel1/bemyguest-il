@@ -30,8 +30,9 @@ grades_df = get_cached_grades_df()
 group_num = st.radio("מה מספר הקבוצה?", grades_df["group_num"].astype(int).sort_values().unique())
 group_grades_df = grades_df[grades_df["group_num"] == group_num]
 
-participants_num = group_grades_df["grader_name"].nunique()
-if participants_num != len(group_grades_df):
+host_num = group_grades_df["host_name"].nunique()
+is_couples = 2 if len(group_grades_df["host_name"].iloc[0].split(',')) == 2 else 1
+if host_num * (host_num-1) * is_couples != len(group_grades_df):
     st.error("לא כל המשתתפים הגישו ניקוד!")
     # st.stop()
 
