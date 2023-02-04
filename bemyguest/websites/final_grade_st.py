@@ -84,6 +84,7 @@ def display_grades(norm_grades_f, grades_attr_name) -> None:  # type: ignore
 
     return norm_grades["total_score"]
 
+st.title('שים לב שהציונים המכריעים המשקוללים נמצאים למטה')
 
 norm_food_grades = display_grades(Participant.norm_food_grades, "food")
 norm_hagasha_grades = display_grades(Participant.norm_hagasha_grades, "hagasha")
