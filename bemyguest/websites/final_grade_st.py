@@ -10,6 +10,7 @@ sys.path.append(os.path.dirname(os.path.dirname(__file__)))
 
 from bemyguest.participant import Participant
 from bemyguest.websites.connections import get_cached_grades_df
+from bemyguest.websites.st_utils import enter
 
 st.markdown(
     """<style>
