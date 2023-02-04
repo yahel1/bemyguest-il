@@ -88,7 +88,7 @@ def display_grades(norm_grades_f, grades_attr_name) -> None:  # type: ignore
 norm_food_grades = display_grades(Participant.norm_food_grades, "food")
 norm_hagasha_grades = display_grades(Participant.norm_hagasha_grades, "hagasha")
 norm_hospitality_grades = display_grades(Participant.norm_hospitality_grades, "hospitality")
-norm_general_grades = display_grades(Participant.norm_hospitality_grades, "general")
+norm_general_grades = display_grades(Participant.norm_general_grades, "general")
 
 st.subheader("שקלול ציונים לפי 0.2 לכל קטגוריה ספציפית ו-0.4 לקטגוריה הכללית")
 st.table((norm_food_grades + norm_hagasha_grades + norm_hospitality_grades) * 0.2 + norm_general_grades * 0.4)
