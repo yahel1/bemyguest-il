@@ -1,6 +1,6 @@
 name: dinewith
 channels:
-  - conda-forge
+#  - conda-forge
   - defaults
 
 dependencies:
@@ -8,9 +8,9 @@ dependencies:
   - pip
 
   - pip:
-#      - loguru
+      - loguru
       - streamlit-aggrid
       - streamlit
-#      - colormath
-#      - gcsa
+      - colormath
+      - gcsa
       - pygsheets
