@@ -8,9 +8,9 @@ dependencies:
   - pip
 
   - pip:
-      - loguru
+#      - loguru
       - streamlit-aggrid
       - streamlit
-      - colormath
-      - gcsa
+#      - colormath
+#      - gcsa
       - pygsheets
