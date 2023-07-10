@@ -31,19 +31,10 @@ sheet_url2write = st.secrets["private_gsheets_url2"]
 
 @st.experimental_memo
 def get_participant_df():
-    sh = conn2read.open("בואו לאכול עם חברים שלי עונה 5 (תגובות)")
+    print(conn2read)
+    sh = conn2read.open("BeMyGuest-season6")
     # Define which sheet to open in the file
     wks = sh[1]
-    # Get the data from the Sheet into python as DF
-    df = wks.get_as_df()
-    # df = pd.read_sql(q, conn2read)
-    return df
-
-
-def get_grades_df():
-    sh = conn2write.open("season5_grades")
-    # Define which sheet to open in the file
-    wks = sh[0]
     # Get the data from the Sheet into python as DF
     df = wks.get_as_df()
     # df = pd.read_sql(q, conn2read)
@@ -56,10 +47,20 @@ def get_cached_grades_df():
     return df
 
 
-def write_to_grades_sheet(df: pd.DataFrame):
-    sh = conn2write.open("season5_grades")
+def get_grades_df():
+    sh = conn2write.open("bemyguest_grades")
     # Define which sheet to open in the file
-    wk1 = sh[0]
+    wks = sh[1]
+    # Get the data from the Sheet into python as DF
+    df = wks.get_as_df()
+    # df = pd.read_sql(q, conn2read)
+    return df
+
+
+def write_to_grades_sheet(df: pd.DataFrame):
+    sh = conn2write.open("bemyguest_grades")
+    # Define which sheet to open in the file
+    wk1 = sh[1]
     cells = wk1.get_all_values(include_tailing_empty_rows=None, include_tailing_empty=False, returnas="matrix")
     last_row = len(cells)
     if last_row > 1:
